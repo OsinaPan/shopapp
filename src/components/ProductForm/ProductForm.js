@@ -8,11 +8,11 @@ import OptionSize from '../OptionSize/OptionSize';
 const ProductForm = ({sizes, currentSize, currentColor, handlerSize, handlerColor, summary, colors}) => {
 
   return (
-    <form>
+    <form onSubmit={(e)=>summary(e)}> 
       <OptionSize currentSize={currentSize} handlerSize={handlerSize} sizes={sizes}/>
       <OptionColor currentColor={currentColor} handlerColor={handlerColor} colors={colors}/>
-      <Button className={styles.button} >
-        <span className="fa fa-shopping-cart" onClick={(e)=>summary(e)}/>
+      <Button className={styles.button}>
+        <span className="fa fa-shopping-cart" />
       </Button>
     </form>
   );
